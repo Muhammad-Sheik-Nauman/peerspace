@@ -47,17 +47,17 @@ const ChatSection = () => {
   };
 
   return (
-    <div className="flex-1 flex flex-col h-screen bg-black text-gray-200 border-l border-yellow-500/10">
+    <div className="flex flex-col h-full bg-black text-gray-200 border-l border-yellow-500/10">
       {/* Chat Header */}
-      <div className="p-4 border-b border-yellow-500/20 bg-gray-900 flex items-center justify-between">
-        <h2 className="text-lg font-bold text-yellow-400 tracking-wide">
+      <div className="p-3 md:p-4 border-b border-yellow-500/20 bg-gray-900 flex items-center justify-between">
+        <h2 className="text-base md:text-lg font-bold text-yellow-400 tracking-wide">
           General Chat
         </h2>
         <span className="text-xs text-gray-400 italic">Active now</span>
       </div>
 
       {/* Messages */}
-      <div className="flex-1 overflow-y-auto p-6 space-y-5 scrollbar-thin scrollbar-thumb-yellow-500/20 scrollbar-track-transparent">
+      <div className="flex-1 overflow-y-auto p-4 md:p-6 space-y-4 md:space-y-5 scrollbar-thin scrollbar-thumb-yellow-500/20 scrollbar-track-transparent">
         {messages.map((msg) => (
           <div key={msg.id} className="flex flex-col">
             <div className="flex items-baseline space-x-2">
@@ -80,21 +80,21 @@ const ChatSection = () => {
       {/* Message Input */}
       <form
         onSubmit={handleSendMessage}
-        className="p-4 border-t border-yellow-500/20 bg-gray-900"
+        className="p-3 md:p-4 border-t border-yellow-500/20 bg-gray-900"
       >
-        <div className="flex space-x-3">
+        <div className="flex space-x-2 md:space-x-3">
           <input
             type="text"
             value={message}
             onChange={(e) => setMessage(e.target.value)}
             placeholder="Type your message..."
-            className="flex-1 rounded-lg border border-yellow-500/30 bg-black text-gray-200 px-4 py-2 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-yellow-400"
+            className="flex-1 rounded-lg border border-yellow-500/30 bg-black text-gray-200 px-3 md:px-4 py-2 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-yellow-400 text-sm md:text-base"
           />
           <button
             type="submit"
-            className="bg-yellow-400 text-black rounded-lg px-4 py-2 hover:bg-yellow-300 focus:outline-none focus:ring-2 focus:ring-yellow-400 transition shadow-md"
+            className="bg-yellow-400 text-black rounded-lg px-3 md:px-4 py-2 hover:bg-yellow-300 focus:outline-none focus:ring-2 focus:ring-yellow-400 transition shadow-md"
           >
-            <Send className="h-5 w-5" />
+            <Send className="h-4 w-4 md:h-5 md:w-5" />
           </button>
         </div>
       </form>
