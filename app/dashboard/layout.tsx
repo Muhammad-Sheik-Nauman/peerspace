@@ -1,6 +1,6 @@
 import Sidebar from '@/components/dashboard/Sidebar';
 import ChatSection from '@/components/dashboard/ChatSection';
-import AiSection from '@/components/dashboard/AiSection';
+import ChatAI from '@/components/dashboard/ChatAI';
 
 export default function DashboardLayout({
   children,
@@ -12,7 +12,7 @@ export default function DashboardLayout({
       <Sidebar />
       <main className="flex-1 flex">
         <ChatSection />
-        <AiSection />
+        <ChatAI />
       </main>
     </div>
   );
