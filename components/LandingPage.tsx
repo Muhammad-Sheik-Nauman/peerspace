@@ -1,4 +1,7 @@
-import { SignInButton, SignUpButton, SignedOut } from "@clerk/nextjs";
+'use client';
+
+import { SignInButton, SignUpButton, SignedOut, SignedIn } from "@clerk/nextjs";
+import Link from "next/link";
 
 export default function LandingPage() {
   return (
@@ -29,6 +32,14 @@ export default function LandingPage() {
                   </button>
                 </SignInButton>
               </SignedOut>
+
+              <SignedIn>
+                <Link href="/dashboard">
+                  <button className="rounded-lg bg-yellow-400 px-5 py-3 text-sm font-semibold text-black shadow-lg transition hover:bg-yellow-300 focus:ring-2 focus:ring-offset-2 focus:ring-yellow-400">
+                    Go to Dashboard
+                  </button>
+                </Link>
+              </SignedIn>
             </div>
           </div>
         </section>
@@ -69,7 +80,7 @@ export default function LandingPage() {
               </h3>
               <p className="text-gray-300 text-base">
                 Exchange notes, study materials, and valuable insights to support 
-                each other’s learning journey.
+                each other's learning journey.
               </p>
             </div>
 
